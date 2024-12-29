@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <title>Pendaftaran Pasien Baru</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .mb-3 {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pendaftaran Pasien Baru</h1>
+    <form id="patient-form" method="POST" action="https://script.google.com/macros/s/AKfycbyecbceJt76T3nKcImtPaeyA6rIp7JMscv7NaR9o-F1_DqA2IELkzKjnpr4k4PUUQJoXA/exec" class="container">
+        <div class="mb-3">
+            <label for="name">Nama</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="rekam medis">Rekam Medis</label>
+            <input type="text" name="rekam medis" id="rekam medis">
+        </div>
+        <div class="mb-3">
+            <label for="pesawat">Pilih Pesawat:</label>
+            <select name="pesawat" id="pesawat">
+                <option value="radixact">Radixact</option>
+                <option value="versa_hd">Versa HD</option>
+                <option value="halcyon">Halcyon</option>
+                <option value="varian">Varian</option>
+                <option value="platform">Platform</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tanggal sinar">Tanggal Sinar</label>
+            <input type="date" name="tanggal sinar" id="tanggal sinar">
+        </div>
+        <div class="mb-3">
+            <label for="poli">Pilih Poli:</label>
+            <select name="poli" id="poli">
+                <option value="poli1">Poli 1</option>
+                <option value="poli2">Poli 2</option>
+                <option value="poli3">Poli 3</option>
+                <option value="ut">UT</option>
+                <option value="rcs">RCS</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="dpjp">Pilih DPJP:</label>
+            <select name="dpjp" id="dpjp">
+                <option value="sg">SG</option>
+                <option value="ag">AG</option>
+                <option value="am">AM</option>
+                <option value="hd">HD</option>
+                <option value="hk">HK</option>
+                <option value="ir">IR</option>
+                <option value="rai">RAI</option>
+                <option value="fr">FR</option>
+                <option value="sms">SMS</option>
+                <option value="eny">ENY</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="teknik">Pilih Teknik:</label>
+            <select name="teknik" id="teknik">
+                <option value="IMRT">IMRT</option>
+                <option value="VMET">VMET</option>
+                <option value="3DCRT">3DCRT</option>
+                <option value="2D">2D</option>
+                <option value="SRS">SRS</option>
+                <option value="SRT">SRT</option>
+                <option value="SRBT">SRBT</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="fraksi">Fraksi</label>
+            <input type="number" name="fraksi" id="fraksi">
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+    </form>
+</body>
+</html>
+<script>
+    // Simulasi data pasien (gunakan logika server-side untuk data aktual)
+    const existingPatients = [
+        { pesawat: "radixact", tanggalSinar: "2024-01-01" },
+        { pesawat: "radixact", tanggalSinar: "2024-01-01" },
+        { pesawat: "halcyon", tanggalSinar: "2024-01-02" },
+        { pesawat: "radixact", tanggalSinar: "2024-01-01" },
+    ];
+
+    document.getElementById("patient-form").addEventListener("submit", function (event) {
+        const pesawat = document.getElementById("pesawat").value;
+        const tanggalSinar = document.getElementById("tanggal sinar").value;
+
+        // Hitung jumlah pasien dengan pesawat dan tanggal yang sama
+        const count = existingPatients.filter(
+            patient => patient.pesawat === pesawat && patient.tanggalSinar === tanggalSinar
+        ).length;
+
+        if (count >= 4) {
+            alert("Maksimal 4 pasien untuk pesawat " + pesawat + " pada tanggal " + tanggalSinar);
+            event.preventDefault(); // Hentikan pengiriman formulir
+        } else {
+            // Tambahkan data pasien baru ke existingPatients (opsional, untuk simulasi)
+            existingPatients.push({ pesawat, tanggalSinar });
+        }
+    });
+</script>
